@@ -52,6 +52,7 @@ public final class EchoServer {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
+            //装配参数
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
              .channel(NioServerSocketChannel.class)
@@ -69,7 +70,7 @@ public final class EchoServer {
                  }
              });
 
-            // Start the server.
+            // 启动服务
             ChannelFuture f = b.bind(PORT).sync();
 
             // Wait until the server socket is closed.
