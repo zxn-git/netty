@@ -63,6 +63,12 @@ public class NioServerSocketChannel extends AbstractNioMessageChannel
         }
     }
 
+    /**
+     * 初始化两个参数
+     * 1. 当前Nioserversocketchannel
+     * 2. java原生ServerSocketChannelImpl
+     *
+     */
     private final ServerSocketChannelConfig config;
 
     /**
