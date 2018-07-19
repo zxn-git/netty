@@ -137,8 +137,14 @@ public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerCh
         return this;
     }
 
+
+    /**
+     * 创建好，serverchannel后，进行包装
+     */
+
     @Override
     void init(Channel channel) throws Exception {
+        //为通道绑定属性，例如：顺序处理请求，队列容量
         final Map<ChannelOption<?>, Object> options = options0();
         synchronized (options) {
             setChannelOptions(channel, options, logger);
